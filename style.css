@@ -509,12 +509,12 @@ body::after {
 }
 
 /* SIMPLE CONTACT LAYOUT */
-/* .contact-simple-inner {
+.contact-simple-inner {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
   align-items: center;
-} */
+}
 
 /* CONTACT – card look and spacing */
 .contact-simple .container.contact-simple-inner {
@@ -549,6 +549,7 @@ body::after {
   height: 1px;
   background: rgba(0,0,0,0.06);
   margin-left: 1rem;
+}
 
 .contact-row:hover {
   transform: translateX(4px);
@@ -639,14 +640,38 @@ body::after {
   }
 }
 
-@media (max-width: 640px) {
-  .nav-container {
-    flex-direction: row;
+@media (max-width: 840px) {
+  .hero-inner,
+  .about-inner,
+  .contact-inner,
+  .contact-simple-inner {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .hero-inner {
+    text-align: left;
+  }
+
+  .hero-image {
+    order: -1;
   }
 
   .nav-links {
-    gap: 0.8rem;
-    font-size: 0.85rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .logo-img {
+    height: 48px;
+  }
+
+  .nav-links.centered {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .section {
@@ -662,8 +687,16 @@ body::after {
     align-items: flex-start;
   }
 
-  @media (max-width: 640px) {
-  .logo-img { height: 48px; }
-  .nav-links.centered { gap: 1rem; flex-wrap: wrap; justify-content: center; }
-}
+  /* Contact card on mobile */
+  .contact-simple .container.contact-simple-inner {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .contact-simple-inner {
+    text-align: center;
+  }
+
+  .contact-links {
+    align-items: center;
+  }
 }
