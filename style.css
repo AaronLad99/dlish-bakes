@@ -352,13 +352,6 @@ body::after {
   margin-bottom: 1rem;
 }
 
-/* GALLERY */
-.gallery {
-  background: radial-gradient(circle at 12% 0%, var(--brand-sage) 0%, rgba(184,214,179,0.15) 20%, transparent 45%),
-              radial-gradient(circle at 88% 0%, var(--brand-purple-soft) 0%, rgba(207,196,238,0.18) 22%, transparent 48%),
-              #ffffff;
-}
-
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
