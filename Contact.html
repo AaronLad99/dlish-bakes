@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>[Sister's Name] Bakes | Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact [Sister's Name] for custom cakes and bakes." />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Icons (for social media logos) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-FontAwesomeHashHere"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">🍰</span>
+        <span class="logo-text">[Sister's Name] Bakes</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#gallery">Bakes</a>
+        <a href="contact.html" class="active-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section contact">
+      <div class="container section-inner contact-inner">
+        <div class="contact-text">
+          <h1>Let’s talk cake.</h1>
+          <p>
+            For enquiries about availability, flavours, designs or pricing, please
+            send a message via Instagram or email. I’ll aim to reply as soon as I can.
+          </p>
+          <p class="contact-note">
+            Please include your event date, rough number of servings and any design ideas if possible.
+          </p>
+
+          <div class="contact-links">
+            <!-- Instagram -->
+            <a
+              href="https://instagram.com/yourhandle"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-pill"
+            >
+              <i class="fa-brands fa-instagram"></i>
+              <span>@yourhandle</span>
+            </a>
+
+            <!-- Facebook -->
+            <a
+              href="https://facebook.com/yourpage"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-pill"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+              <span>Facebook page</span>
+            </a>
+
+            <!-- TikTok (optional; remove if not needed) -->
+            <a
+              href="https://www.tiktok.com/@yourhandle"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-pill"
+            >
+              <i class="fa-brands fa-tiktok"></i>
+              <span>@yourhandle</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:youremail@example.com" class="contact-pill">
+              <i class="fa-solid fa-envelope"></i>
+              <span>youremail@example.com</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Simple “form” card (optional, uses mailto) -->
+        <div class="contact-card">
+          <h2>Quick enquiry</h2>
+          <p class="contact-card-text">
+            This form will open your email app with the details filled in.
+          </p>
+          <form
+            action="mailto:youremail@example.com"
+            method="GET"
+            onsubmit="return buildMailto(this);"
+          >
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+
+            <label>
+              Event date
+              <input type="date" name="date" required />
+            </label>
+
+            <label>
+              Message
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Tell me about your cake: servings, flavours, design ideas..."
+                required
+              ></textarea>
+            </label>
+
+            <button type="submit" class="btn primary-btn block-btn">
+              Open in email
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> [Sister's Name] Bakes. All rights reserved.</p>
+      <p class="footer-small">
+        Designed &amp; coded by <span class="underline">[Your Name]</span>.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Convert form input into a mailto link
+    function buildMailto(form) {
+      const name = encodeURIComponent(form.name.value);
+      const date = encodeURIComponent(form.date.value);
+      const message = encodeURIComponent(form.message.value);
+
+      const subject = encodeURIComponent("Cake enquiry from " + form.name.value);
+      const body = encodeURIComponent(
+        "Name: " + form.name.value +
+        "\nEvent date: " + form.date.value +
+        "\n\nMessage:\n" + form.message.value
+      );
+
+      const email = "youremail@example.com"; // <- change this
+      const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}`;
+
+      window.location.href = mailtoUrl;
+      return false; // prevent default submit
+    }
+  </script>
+</body>
+</html>
