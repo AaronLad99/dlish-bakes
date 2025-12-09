@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>[Sister's Name] Bakes | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A portfolio of homemade cakes and bakes by [Sister's Name]." />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">🍰</span>
+        <span class="logo-text">[Sister's Name] Bakes</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#gallery">Bakes</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Homemade • Bespoke • Sweet</p>
+          <h1>Beautiful cakes for every occasion.</h1>
+          <p class="hero-subtitle">
+            From birthdays to baby showers, I create custom cakes and treats
+            that taste as good as they look.
+          </p>
+          <div class="hero-actions">
+            <a href="#gallery" class="btn primary-btn">See my bakes</a>
+            <a href="contact.html" class="btn ghost-btn">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- Replace with a real image path -->
+          <div class="hero-photo" style="background-image: url('assets/images/hero-cake.jpg');"></div>
+          <p class="hero-caption">Hand-decorated cakes made with love.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section about">
+      <div class="container section-inner about-inner">
+        <div>
+          <h2>About me</h2>
+          <p>
+            Hi, I’m <strong>[Sister's Name]</strong>, a self-taught baker based in
+            <strong>[Location]</strong>. I specialise in buttercream cakes, cupcakes
+            and treats for small events, celebrations, and “just because” moments.
+          </p>
+          <p>
+            Every bake is made to order using quality ingredients and plenty of care.
+            I love working with pastel colours, florals and simple, elegant designs –
+            but I’m always excited to try something new.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>What I make</h3>
+          <ul>
+            <li>Celebration cakes (6&quot;–8&quot; tiers)</li>
+            <li>Cupcakes &amp; mini cupcakes</li>
+            <li>Traybakes &amp; brownies</li>
+            <li>Simple dessert tables for small parties</li>
+          </ul>
+          <p class="about-note">
+            Currently taking orders via Instagram and email.
+          </p>
+          <a href="contact.html" class="btn small-btn block-btn">Contact me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="section gallery">
+      <div class="container section-inner">
+        <div class="section-header">
+          <h2>Recent bakes</h2>
+          <p>A little taste of what I’ve been working on lately.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Card 1 -->
+          <article class="gallery-card">
+            <div class="gallery-image" style="background-image: url('assets/images/cake-1.jpg');"></div>
+            <div class="gallery-content">
+              <h3>Pastel birthday cake</h3>
+              <p>Vanilla sponge with vanilla buttercream, pastel swirl piping and sprinkles.</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="gallery-card">
+            <div class="gallery-image" style="background-image: url('assets/images/cake-2.jpg');"></div>
+            <div class="gallery-content">
+              <h3>Floral engagement cake</h3>
+              <p>Two-tier lemon cake with fresh florals and gold accents.</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="gallery-card">
+            <div class="gallery-image" style="background-image: url('assets/images/cupcakes-1.jpg');"></div>
+            <div class="gallery-content">
+              <h3>Rose cupcakes</h3>
+              <p>Box of 12 buttercream rose cupcakes – perfect for gifting.</p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="gallery-card">
+            <div class="gallery-image" style="background-image: url('assets/images/cake-3.jpg');"></div>
+            <div class="gallery-content">
+              <h3>Baby shower cake</h3>
+              <p>Gentle pastel palette with simple fondant details.</p>
+            </div>
+          </article>
+
+          <!-- Add/duplicate more cards as needed -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> [Sister's Name] Bakes. All rights reserved.</p>
+      <p class="footer-small">
+        Designed &amp; coded by <span class="underline">[Your Name]</span>.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
