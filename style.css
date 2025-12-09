@@ -411,6 +411,79 @@ body::after {
   color: var(--muted);
 }
 
+/* --- Pseudo-3D cake card --- */
+.cake3d-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+  will-change: transform;
+  perspective: 1000px;                 /* enables 3D */
+}
+
+.cake3d-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 48px rgba(0,0,0,.10);
+}
+
+.cake3d-inner {
+  position: relative;
+  height: 320px;                        /* card height */
+  transform-style: preserve-3d;
+  transition: transform .25s ease;
+  background: linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.04));
+}
+
+.cake3d-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border-subtle);
+  transform-origin: center center;
+  transition: opacity .25s ease, filter .25s ease, transform .25s ease;
+}
+
+/* visible by default */
+.cake3d-img.view-front { opacity: 1; }
+
+/* synthetic “angled” view uses same image with perspective cues */
+.cake3d-img.view-angle {
+  opacity: 0;
+  transform: scale(1.04) translateZ(1px);
+  filter: brightness(.98) contrast(1.02);
+  /* fake side shading & slight perspective */
+  mask-image: linear-gradient( to right, rgba(0,0,0,.94), rgba(0,0,0,.92) 55%, rgba(0,0,0,.85) );
+}
+
+/* on hover: crossfade to the angled layer and tilt container */
+.cake3d-card:hover .cake3d-inner {
+  transform: rotateY(14deg) rotateX(2deg) translateZ(0);
+}
+.cake3d-card:hover .view-front { opacity: 0; }
+.cake3d-card:hover .view-angle { opacity: 1; }
+
+/* caption */
+.cake3d-caption {
+  padding: 1rem 1.2rem 1.2rem;
+}
+.cake3d-caption h3 {
+  margin: 0 0 .35rem;
+  font-size: 1.05rem;
+}
+.cake3d-caption p {
+  margin: 0;
+  font-size: .92rem;
+  color: var(--muted);
+}
+
+/* Responsive height tweak */
+@media (max-width: 640px) {
+  .cake3d-inner { height: 260px; }
+}
+
+
 /* CONTACT PAGE */
 .contact-inner {
   display: grid;
