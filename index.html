@@ -157,5 +157,27 @@
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+  <script>
+  // Mouse tilt on 3D cards
+  document.querySelectorAll('.cake3d-card').forEach(card => {
+    const inner = card.querySelector('.cake3d-inner');
+    const max = Number(card.dataset.depth || 12);
+
+    function tilt(e) {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;   // 0..1
+      const y = (e.clientY - r.top)  / r.height;  // 0..1
+      const rx = (0.5 - y) * max;                 // up/down
+      const ry = (x - 0.5) * (max * 1.4);         // left/right
+      inner.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+    }
+
+    card.addEventListener('mousemove', tilt);
+    card.addEventListener('mouseleave', () => {
+      inner.style.transform = '';                 // resets to CSS hover state
+    });
+  });
+</script>
 </body>
 </html>
