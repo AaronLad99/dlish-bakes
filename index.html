@@ -94,11 +94,22 @@
 
         <div class="gallery-grid">
           <!-- Card 1 -->
-          <article class="gallery-card">
-            <div class="gallery-image" style="background-image: url('assets/images/cake-1.jpg');"></div>
-            <div class="gallery-content">
-              <h3>Pastel birthday cake</h3>
-              <p>Vanilla sponge with vanilla buttercream, pastel swirl piping and sprinkles.</p>
+          <!-- 3D HOVER CAKE CARD -->
+          <article class="cake3d-card" data-depth="12">
+            <div class="cake3d-inner">
+              <!-- front view -->
+              <img class="cake3d-img view-front"
+                   src="/assets/images/cakes/cake-rose.jpg"
+                   alt="Vanilla cake with buttercream rosettes" loading="lazy" />
+          
+              <!-- synthetic angled view (same image, styled by CSS) -->
+              <img class="cake3d-img view-angle"
+                   src="/assets/images/cakes/cake-rose.jpg"
+                   alt="" aria-hidden="true" />
+            </div>
+            <div class="cake3d-caption">
+              <h3>Buttercream rosette cake</h3>
+              <p>Vanilla sponge, rosette border, mini florals.</p>
             </div>
           </article>
 
