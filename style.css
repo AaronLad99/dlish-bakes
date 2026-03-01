@@ -600,8 +600,6 @@ body::after {
   .contact-row { justify-content: center; width: 100%; }
   .contact-row::after { display: none; } /* lines off on small screens */
 }
-}
-
 
 /* FOOTER */
 .site-footer {
