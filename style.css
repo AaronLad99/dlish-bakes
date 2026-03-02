@@ -777,3 +777,57 @@ body::after {
     grid-template-columns: 1fr;
   }
 }
+
+/* FAQ Page */
+.faq-container {
+  max-width: 900px;
+}
+
+.faq-block {
+  background: var(--bg-alt);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.faq-block h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.faq-sub {
+  margin-bottom: 1.2rem;
+}
+
+.faq-sub h4 {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  color: var(--accent-dark);
+}
+
+.faq-block p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.faq-block ul {
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.faq-link {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+.cutting-guide img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  margin-top: 1rem;
+}
